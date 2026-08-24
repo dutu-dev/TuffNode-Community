@@ -1,58 +1,40 @@
-\# TuffNode Community Preview
-
+# TuffNode Community Preview
 
 
 Welcome to the official community repository for TuffNode Community Preview.
 
 
-
-\## Download
-
-
+## Download
 
 Download the latest version from the Releases section.
 
 
 
-\## About TuffNode
-
-
+## About TuffNode
 
 TuffNode is a Minecraft server management application designed to simplify server administration.
 
 
-
-\## Community
-
-
+## Community
 
 This repository contains:
 
-\- Public releases
-
-\- Installation packages
-
-\- Release information
-
-\- Community resources
+- Public releases
+- Installation packages
+- Release information
+- Community resources
 
 
 
-\## Feedback \& Bug Reports
-
+## Feedback & Bug Reports
 
 
 For bug reports and feedback:
 
-
-
 contact@tuffnode.com
 
 
-
-\## License
-
-
+## License
 
 TuffNode Community Preview is provided as a beta preview release.
 
