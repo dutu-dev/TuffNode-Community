@@ -27,6 +27,8 @@ TuffNode Community moves from the initial preview into a much more complete loca
 - Provider support for Modrinth, Hangar and SpigotMC-compatible resources through Spiget.
 - Installed add-ons are read directly from the real server folders.
 - Local add-on installation from files.
+- Installed add-ons can be enabled, disabled and uninstalled from TuffNode.
+- Disabled add-ons are kept safely and can be enabled again later.
 - Search can be submitted with Enter.
 
 ### Java and Bedrock cross-play
