@@ -1,40 +1,42 @@
-# TuffNode Community Preview
+# TuffNode Community
 
-
-Welcome to the official community repository for TuffNode Community Preview.
-
+Official binary distribution repository for **TuffNode Community**.
 
 ## Download
 
-Download the latest version from the Releases section.
+Download the latest Windows installer from **GitHub Releases**:
 
+https://github.com/dutu-dev/TuffNode-Community/releases/latest
 
+Current target release: **v0.4.0**
 
-## About TuffNode
+## What is published here
 
-TuffNode is a Minecraft server management application designed to simplify server administration.
+This repository is intentionally distribution-only.
 
+- Windows installer executables
+- Release notes
+- Changelog
+- Public release information
 
-## Community
+**The TuffNode application source code is not published in this repository.**
 
-This repository contains:
+## About TuffNode Community
 
-- Public releases
-- Installation packages
-- Release information
-- Community resources
+TuffNode Community is a free Windows application for creating, importing and managing self-hosted Minecraft servers.
 
+It includes server lifecycle management, Java runtime handling, console and player tools, add-on browsing and installation, backups, networking tools, Shield controls, configurable JVM memory/arguments and optional Java/Bedrock cross-play through Geyser.
 
+TuffNode Sync publishing is optional and does not replace normal Minecraft connections. Published servers are intended to become visible in a future TuffNode Launcher version.
 
-## Feedback & Bug Reports
+## Changelog
 
+See [CHANGELOG.md](CHANGELOG.md).
 
-For bug reports and feedback:
+## Contact
 
 contact@tuffnode.com
 
+## Platform
 
-## License
-
-TuffNode Community Preview is provided as a beta preview release.
-
+Windows 10/11 x64
