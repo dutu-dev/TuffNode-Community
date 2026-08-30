@@ -1,5 +1,49 @@
 # TuffNode Community Changelog
 
+## v0.4.1
+
+This update focuses on safer server lifecycle handling, installed add-on management and Community polish after the v0.4.0 test cycle.
+
+### Server management
+
+- Added a complete server deletion flow.
+- Added **Delete** directly to each server row in the Servers page.
+- Server deletion remains available from the Manage view.
+- Managed servers show a destructive confirmation before permanent deletion.
+- Managed-server deletion clearly warns that worlds, plugins/mods, configuration and local server data will be removed.
+- Imported servers use a safe **Remove from TuffNode** flow and keep their original Minecraft server folder and files.
+- Active servers are stopped before deletion or removal.
+- Server lists refresh correctly after deletion/removal.
+- Removed the temporary `Delete clicked` debug dialog.
+
+### Add-ons
+
+- Added installed add-on management controls.
+- Installed plugins/mods can be enabled, disabled and uninstalled from TuffNode.
+- Improved installed add-on state handling.
+- Add-on search can be submitted with **Enter**.
+- Improved the Community content installation workflow.
+
+### Java and Bedrock cross-play
+
+- Improved Geyser/Bedrock connection information.
+- Bedrock UDP addresses are shown alongside the related Java connection addresses for easier discovery.
+- Clarified where Bedrock connection information is shown in Network.
+
+### Settings, Sync and Shield
+
+- Moved TuffNode Sync publishing controls into the server settings flow.
+- Clarified when server settings apply immediately and when a restart is required.
+- Clarified Shield protection refresh behavior and wording.
+
+### Installer and release polish
+
+- Updated the Community application and installer to **v0.4.1**.
+- Kept the existing Community installer identity so v0.4.1 upgrades prior Community installations in place.
+- Fixed Community desktop shortcut creation.
+- Improved installer metadata, documentation and build validation.
+- Standardized the installer name as `TuffNode-Community-v0.4.1.exe`.
+
 ## v0.4.0
 
 TuffNode Community moves from the initial preview into a much more complete local Minecraft server manager.
