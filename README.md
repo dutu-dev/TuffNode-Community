@@ -2,13 +2,80 @@
 
 Official binary distribution repository for **TuffNode Community**.
 
+## Current release candidate
+
+**v0.6.0-rc.1**
+
+This is the first release candidate for the v0.6.0 Community release. It is intended for final validation before the stable v0.6.0 build.
+
+The current stable public release remains **v0.4.1** until the release candidate is published and validated.
+
 ## Download
 
-Download the latest Windows installer from **GitHub Releases**:
+Windows installers are published through **GitHub Releases**:
 
-https://github.com/dutu-dev/TuffNode-Community/releases/latest
+https://github.com/dutu-dev/TuffNode-Community/releases
 
-Current target release: **v0.4.1**
+Expected RC1 installer name:
+
+`TuffNode-Community-v0.6.0-rc.1.exe`
+
+## v0.6.0-rc.1 highlights
+
+### Desktop and UI
+
+- Rebuilt dense Community administration shell.
+- Runtime-selectable dark and light themes.
+- Runtime accent-color selection.
+- Notification Center with unread state, history and Silent Mode.
+- Official application, installer and System Tray branding.
+- Windows System Tray integration.
+- Dynamic taskbar and tray status/telemetry.
+- Start with Windows support.
+- Configurable Minimize-to-Tray / Exit behavior.
+- 18 bundled offline languages.
+
+### Server creation
+
+- Reworked Create Server modal with fixed header/footer and scrollable body.
+- Smart Minecraft port selection.
+- Automatic compatible Java / Eclipse Temurin provisioning.
+- Separate minimum and maximum RAM allocation.
+- RAM limits use total installed physical memory rather than current free memory.
+- Optional Geyser / Bedrock support.
+- Managed 64 × 64 server icons.
+- Duplicate-create race protection.
+
+### Server management
+
+- Dense searchable/filterable Servers table.
+- Stable catalogue reconciliation without clearing/rebuilding the full UI list.
+- Fixed first-load duplicate server rows.
+- Fixed server-list flicker and disappearing rows.
+- External `server.properties` changes synchronize back into TuffNode, including port changes.
+- Improved managed/imported server deletion behavior.
+- Locked-file deletion retries for Java/JAR files still in use.
+
+### Workspace
+
+- Modular Overview, Console, Players, Add-ons, Backups, Config and Files views.
+- Provider-aware configuration discovery and raw editing.
+- Live server PID, CPU and memory telemetry.
+- Live player telemetry.
+- Rebuilt Add-ons Catalog / Installed workflows.
+- Optional anticheat detection and Grim recommendation flow.
+- Improved backup and scheduler behavior.
+
+### Reliability
+
+- Application-wide exception boundary for recoverable UI/async failures.
+- Guarded background operations across runtime, tray, Shield, add-ons and loaded views.
+- User-facing error dialogs for recoverable failures.
+- Hardened WPF bindings and nullable image-source handling.
+- Windows/.NET 10 CI validation.
+- **0 warnings**
+- **0 errors**
+- **69 / 69 tests passing**
 
 ## What is published here
 
@@ -27,18 +94,6 @@ TuffNode Community is a free Windows application for creating, importing and man
 
 It includes server lifecycle management, Java runtime handling, console and player tools, add-on browsing and installation, installed add-on management, backups, networking tools, Shield controls, configurable JVM memory/arguments and optional Java/Bedrock cross-play through Geyser.
 
-### v0.4.1 highlights
-
-- Safe managed-server deletion with destructive confirmation
-- Imported-server removal without deleting the original server folder
-- Automatic stop-before-delete behavior for active servers
-- Installed plugin/mod enable, disable and uninstall actions
-- Improved Geyser/Bedrock connection information
-- Improved Community settings, TuffNode Sync and Shield behavior
-- Installer and desktop shortcut fixes
-
-TuffNode Sync publishing is optional and does not replace normal Minecraft connections. Published servers are intended to become visible in a future TuffNode Launcher version.
-
 ## Platform
 
 - Windows 10/11 x64
@@ -47,6 +102,10 @@ TuffNode Sync publishing is optional and does not replace normal Minecraft conne
 ## Changelog
 
 See [CHANGELOG.md](CHANGELOG.md).
+
+## RC1 release notes
+
+See [RELEASE-NOTES-v0.6.0-rc.1.md](RELEASE-NOTES-v0.6.0-rc.1.md).
 
 ## Source availability
 
