@@ -2,13 +2,11 @@
 
 Official binary distribution repository for **TuffNode Community**.
 
-## Current release candidate
+## Current release
 
-**v0.6.0-rc.1**
+**v0.6.0**
 
-This is the first release candidate for the v0.6.0 Community release. It is intended for final validation before the stable v0.6.0 build.
-
-The current stable public release remains **v0.4.1** until the release candidate is published and validated.
+v0.6.0 is the current TuffNode Community release.
 
 ## Download
 
@@ -16,11 +14,11 @@ Windows installers are published through **GitHub Releases**:
 
 https://github.com/dutu-dev/TuffNode-Community/releases
 
-Expected RC1 installer name:
+Installer name:
 
-`TuffNode-Community-v0.6.0-rc.1.exe`
+`TuffNode-Community-v0.6.0.exe`
 
-## v0.6.0-rc.1 highlights
+## v0.6.0 highlights
 
 ### Desktop and UI
 
@@ -103,9 +101,9 @@ It includes server lifecycle management, Java runtime handling, console and play
 
 See [CHANGELOG.md](CHANGELOG.md).
 
-## RC1 release notes
+## v0.6.0 release notes
 
-See [RELEASE-NOTES-v0.6.0-rc.1.md](RELEASE-NOTES-v0.6.0-rc.1.md).
+See [RELEASE-NOTES-v0.6.0.md](RELEASE-NOTES-v0.6.0.md).
 
 ## Source availability
 
