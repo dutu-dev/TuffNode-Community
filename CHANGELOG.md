@@ -6,11 +6,9 @@ All notable TuffNode Community releases and engineering milestones are listed he
 
 ---
 
-## v0.6.0-rc.1 — 2026-09-10
+## v0.6.0 — 2026-09-10
 
-**Release Candidate 1** for the v0.6.0 Community release.
-
-This release candidate is the final UI, stability, desktop-integration and power-user polish pass built on top of the modular v0.5.0 architecture.
+v0.6.0 is the final UI, stability, desktop-integration and power-user polish release built on top of the modular v0.5.0 architecture.
 
 ### Highlights
 
@@ -120,7 +118,7 @@ This release candidate is the final UI, stability, desktop-integration and power
 - **0 warnings**
 - **0 errors**
 - **69 / 69 tests passing**
-- Release-candidate head: `d5b439d103c65126f5380781fd40115495a2d6f5`
+- Release head: `d5b439d103c65126f5380781fd40115495a2d6f5`
 
 ---
 
@@ -354,7 +352,7 @@ TuffNode handled provider-specific artifacts and Java/JDK requirements.
 
 | Version | Date | Type |
 | --- | --- | --- |
-| **v0.6.0-rc.1** | 2026-09-10 | Release Candidate |
+| **v0.6.0** | 2026-09-10 | Community release |
 | **v0.5.0** | 2026-09-08 | Community architecture milestone |
 | **v0.4.2** | 2026-09-08 | Stabilization milestone |
 | **v0.4.1** | 2026-08-30 | Community release |
