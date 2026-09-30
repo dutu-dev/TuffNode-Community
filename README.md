@@ -89,7 +89,9 @@ This repository is intentionally distribution-only.
 
 - Windows installer executables
 - Release notes
-- Changelog
+- Human-readable changelog
+- Structured changelog metadata consumed by TuffNode.Web
+- Checksums and release-manifest metadata
 - Public release information
 
 **The TuffNode application source code is not published in this repository.**
