@@ -8,6 +8,14 @@ Official binary distribution repository for **TuffNode Community**.
 
 v0.6.0 is the current TuffNode Community release.
 
+## Next release
+
+**v0.7.0 — in release preparation**
+
+The v0.7.0 changelog and release notes are already prepared. v0.6.0 remains the current public installer until the v0.7.0 build passes final validation and is attached to GitHub Releases.
+
+See [RELEASE-NOTES-v0.7.0.md](RELEASE-NOTES-v0.7.0.md) and [CHANGELOG.md](CHANGELOG.md).
+
 ## Download
 
 Windows installers are published through **GitHub Releases**:
