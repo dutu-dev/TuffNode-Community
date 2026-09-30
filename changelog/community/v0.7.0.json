@@ -1,0 +1,69 @@
+{
+  "product": "community",
+  "version": "v0.7.0",
+  "sections": [
+    {
+      "title": "Runtime and JVM",
+      "items": [
+        "Managed Auto, G1GC, ZGC and Shenandoah garbage-collector profiles use one centralized launch policy.",
+        "Minimum/maximum heap, GC selection and additional JVM arguments stay synchronized with the effective Java launch.",
+        "Server CPU/RAM telemetry is sampled centrally at low frequency instead of repeatedly from WPF views.",
+        "Batch-script launches perform bounded startup-only Java child discovery so telemetry follows the Minecraft JVM."
+      ]
+    },
+    {
+      "title": "Network diagnostics",
+      "items": [
+        "Added lightweight public TCP reachability checks with listener, firewall and NAT/CGNAT-oriented explanations.",
+        "Automatic probes are cached, deduplicated per runtime identity and ignore stale results after restart or port changes.",
+        "Effective Minecraft ports remain synchronized with external server.properties changes."
+      ]
+    },
+    {
+      "title": "Add-ons",
+      "items": [
+        "Hardened Modrinth, Hangar and Spigot downloads with HTTPS-only trusted hosts, redirect limits and bounded payload sizes.",
+        "Added strict plugin/mod JAR and datapack ZIP validation, including root pack.mcmeta checks.",
+        "Added validated local datapack import and streaming atomic local imports.",
+        "Tracked add-on updates are rollback-safe and store provider, project, version, SHA-256, size and install timestamp metadata.",
+        "Spigot installs resolve a concrete Spiget version instead of tracking an ambiguous latest alias.",
+        "Restart-required state survives workspace navigation until the server reaches a stopped state."
+      ]
+    },
+    {
+      "title": "Lifecycle, configuration and backups",
+      "items": [
+        "Workspace/server switching no longer silently discards unsaved configuration changes.",
+        "Server relocation coordinates with runtime filesystem ownership, resynchronizes the active workspace and restores metadata on rollback.",
+        "Editable configuration paths reject junction/symlink escapes and visual/raw saves use rollback-consistent metadata updates.",
+        "Backup create, restore and delete operations are serialized, path-confined and coordinated with runtime filesystem maintenance.",
+        "Restore validates arguments before locking, checks available disk capacity and cleans completed rollback staging.",
+        "UI/runtime observers are detached during ownership changes and disposed before runtime teardown."
+      ]
+    },
+    {
+      "title": "Desktop and UI reliability",
+      "items": [
+        "Added a Community single-instance guard so duplicate launches activate the existing app instead of creating extra tray instances.",
+        "Hidden metric pages suspend updates and telemetry-only runtime changes avoid unnecessary dashboard, console and workspace refresh work.",
+        "Unsaved-configuration warnings use the shared localization catalog."
+      ]
+    },
+    {
+      "title": "Release integrity",
+      "items": [
+        "Community versioning is centralized in Directory.Build.props at v0.7.0.",
+        "Installer/application publisher identity is aligned to dutu-dev - TuffNode.",
+        "The installer build fails closed on stale release text or metadata.",
+        "Release output includes the installer, SHA-256 sidecar, checksums.txt and a machine-readable release manifest.",
+        "The release manifest records version, tag, publisher, public repository, source revision, installer size and SHA-256."
+      ]
+    },
+    {
+      "title": "Product boundary",
+      "items": [
+        "Community does not include Core-only Always-On Service, remote management, player tunneling, remote files, Blackbox, Predictive Failure, Surgical Restore or Player Time Machine."
+      ]
+    }
+  ]
+}
