@@ -6,6 +6,70 @@ All notable TuffNode Community releases and engineering milestones are listed he
 
 ---
 
+## v0.7.0 — 2026-09-30 — Unreleased
+
+v0.7.0 is the next Community release focused on lightweight runtime management, networking diagnostics, hardened add-on handling, lifecycle correctness and release integrity.
+
+### Runtime and JVM
+
+- Added managed Auto, G1GC, ZGC and Shenandoah garbage-collector profiles.
+- Centralized heap, GC and additional JVM argument handling into one launch policy.
+- Moved CPU/RAM telemetry to a low-frequency centralized runtime sampler.
+- Added bounded startup-only Java child discovery for batch-script launches.
+
+### Network diagnostics
+
+- Added lightweight public TCP reachability checks.
+- Added listener, firewall and NAT/CGNAT-oriented failure explanations.
+- Cached and deduplicated automatic probes per runtime identity.
+- Ignored stale probe completions after runtime restarts, identity changes or effective-port changes.
+- Kept externally changed server ports synchronized back into TuffNode.
+
+### Add-ons
+
+- Hardened Modrinth, Hangar and Spigot downloads with HTTPS-only trusted hosts and redirect validation.
+- Added bounded payload sizes and empty-download rejection.
+- Added strict plugin/mod JAR and datapack ZIP validation.
+- Added root `pack.mcmeta` validation and local datapack ZIP import.
+- Added streaming atomic local imports.
+- Added rollback-safe tracked updates with provider/project/version/SHA-256 metadata.
+- Added concrete Spigot/Spiget version tracking.
+- Preserved restart-required state until the active server stops.
+
+### Lifecycle, configuration and backups
+
+- Protected unsaved configuration when switching or leaving the active server workspace.
+- Serialized workspace/server switching and detached stale Overview observers.
+- Coordinated server relocation with runtime filesystem ownership and rollback.
+- Rejected junction/symlink escapes in editable configuration and managed paths.
+- Made visual/raw configuration saves rollback-consistent.
+- Serialized backup create, restore and delete operations.
+- Confined backup operations to their managed roots.
+- Added restore argument validation, disk-capacity checks and rollback-staging cleanup.
+- Disposed UI/runtime observers cleanly during shutdown.
+
+### Desktop and performance
+
+- Added single-instance desktop protection to prevent duplicate application/tray instances.
+- Suspended hidden metrics pages.
+- Avoided expensive UI/player/backup work for telemetry-only runtime state changes.
+- Routed unsaved-configuration warnings through the shared localization catalog.
+
+### Installer and release integrity
+
+- Centralized Community versioning at v0.7.0.
+- Aligned application and installer publisher identity to **dutu-dev - TuffNode**.
+- Added fail-closed installer release preflight for version, publisher, license and release-facing text.
+- Added published executable metadata verification.
+- Added installer SHA-256 sidecar, `checksums.txt` and a machine-readable release manifest.
+- Kept the existing Community AppId for in-place upgrades.
+
+### Product boundary
+
+- No Core-only Always-On Service, remote management, player tunneling, remote files, Blackbox, Predictive Failure, Surgical Restore or Player Time Machine functionality is included.
+
+---
+
 ## v0.6.0 — 2026-09-10
 
 v0.6.0 is the final UI, stability, desktop-integration and power-user polish release built on top of the modular v0.5.0 architecture.
