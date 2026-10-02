@@ -6,6 +6,19 @@ All notable TuffNode Community releases and engineering milestones are listed he
 
 ---
 
+## v0.7.5 — Unreleased
+
+The current Community development line after the documented v0.7.0 milestone. This version is documented for release preparation only; no public release has been published.
+
+### Current polish and release preparation
+
+- Integrated the supplied Community application, installer and tray branding assets.
+- Added cached add-on icons with provider glyph fallback and richer version detail popups.
+- Added Windows shell opening for files from the server file browser while keeping folder navigation inside TuffNode.
+- Fixed Appearance accent propagation across all application resource aliases.
+- Made sidebar version, build number and source revision read generated assembly metadata.
+- Added the matching v0.7.5 installer documentation and release metadata flow.
+
 ## v0.7.0 — 2026-09-30 — Unreleased
 
 v0.7.0 is the next Community release focused on lightweight runtime management, networking diagnostics, hardened add-on handling, lifecycle correctness and release integrity.
