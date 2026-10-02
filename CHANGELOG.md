@@ -6,6 +6,19 @@ All notable TuffNode Community releases and engineering milestones are listed he
 
 ---
 
+## v0.7.6 — Unreleased
+
+The current Community bugfix line. It is documented for release preparation only; no public release has been published.
+
+### Bugfixes and UI polish
+
+- Improved high-DPI font rendering with ideal text formatting and layout rounding.
+- Reloaded external server.properties edits into the app without overwriting unsaved changes.
+- Fixed add-on catalog installed-state tracking and improved icon decoding.
+- Clarified installed add-on title/JAR presentation and kept shared themed controls.
+- Replaced placeholder navigation glyphs with consistent Fluent icons.
+- Made server list columns responsive and displayed loopback endpoints as localhost.
+
 ## v0.7.5 — Unreleased
 
 The current Community development line after the documented v0.7.0 milestone. This version is documented for release preparation only; no public release has been published.
