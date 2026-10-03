@@ -6,9 +6,9 @@ All notable TuffNode Community releases and engineering milestones are listed he
 
 ---
 
-## v0.7.6 — Unreleased
+## v0.7.6 — Release preparation
 
-The current Community bugfix line. It is documented for release preparation only; no public release has been published.
+The current Community prerelease candidate. The public installer remains v0.6.0 until the v0.7.6 Windows build passes final validation.
 
 ### Bugfixes and UI polish
 
@@ -18,6 +18,12 @@ The current Community bugfix line. It is documented for release preparation only
 - Clarified installed add-on title/JAR presentation and kept shared themed controls.
 - Replaced placeholder navigation glyphs with consistent Fluent icons.
 - Made server list columns responsive and displayed loopback endpoints as localhost.
+- Removed the local-address column from the main server list so action buttons keep stable space.
+- Standardized server action button dimensions, spacing and hover feedback.
+- Added backup presets with granular include/exclude checkboxes and Custom fallback.
+- Reworked add-on details into a transparent blurred modal.
+- Kept System resource cards accessible under display scaling with aligned metric typography.
+- Added proper System and Appearance navigation icons and subtle shared button animations.
 
 ## v0.7.5 — Unreleased
 
