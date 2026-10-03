@@ -1,16 +1,23 @@
 # TuffNode Community v0.7.6
 
-TuffNode Community v0.7.6 is the current development line prepared for installer validation. It is not a published GitHub Release yet.
+## Release status
 
-## Bugfixes and UI polish
+v0.7.6 is prepared as a prerelease candidate. The public installer remains v0.6.0 until the Windows x64 publish, Inno Setup build, metadata checks and optional code-signing validation complete.
 
-- Improved high-DPI font rendering with ideal text formatting and layout rounding.
-- Reloaded external server.properties edits into the app without overwriting unsaved changes.
-- Fixed add-on catalog installed-state tracking and improved icon decoding.
-- Added title plus JAR-name presentation for installed add-ons.
-- Restored shared themed controls in the add-on version picker.
-- Replaced placeholder navigation glyphs with consistent Fluent icons.
-- Made server list columns responsive and displayed loopback endpoints as localhost.
+## Highlights
 
-The existing v0.7.0 and v0.7.1 reliability work and v0.7.5 UI/release-preparation work remain included. No v0.7.6 release or tag has been published yet.
+- Responsive Servers layout with the low-value local-address column removed.
+- Server action buttons use consistent dimensions, spacing, alignment and hover feedback.
+- Server rows remain usable at display scaling without relying on a horizontal scrollbar.
+- Backup presets now provide granular include/exclude checkboxes and switch to Custom when edited manually.
+- Add-ons catalog is more complete and virtualized, with improved thumbnails and installed-state presentation.
+- Add-on details open in a true modal with a transparent blurred backdrop.
+- System resource cards remain accessible at higher display scaling with aligned metric typography.
+- System and Appearance navigation use proper Fluent icons.
+- Shared buttons and workspace tabs have subtle, smooth hover motion.
 
+## Validation
+
+- Development branch: work/audit-and-improvements.
+- Inno Setup entry point: installer/TuffNodeSetup.iss in the source repository.
+- Public GitHub Release and installer: pending final Windows validation.
