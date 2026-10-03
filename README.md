@@ -16,6 +16,8 @@ The v0.7.6 changelog and release notes are prepared. v0.6.0 remains the current 
 
 See [RELEASE-NOTES-v0.7.6.md](RELEASE-NOTES-v0.7.6.md) and [CHANGELOG.md](CHANGELOG.md).
 
+The v0.7.6 candidate includes responsive server actions, backup presets, add-on modal blur and System scaling fixes. The public installer remains v0.6.0 until final validation.
+
 ## Download
 
 Windows installers are published through **GitHub Releases**:
