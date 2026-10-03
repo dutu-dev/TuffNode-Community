@@ -2,7 +2,7 @@
 
 ## Release status
 
-v0.7.6 is prepared as a prerelease candidate. The public installer remains v0.6.0 until the Windows x64 publish, Inno Setup build, metadata checks and optional code-signing validation complete.
+v0.7.6 is the current Community release. The release metadata is published; the signed Windows installer asset will be attached when the final binary is uploaded.
 
 ## Highlights
 
@@ -20,4 +20,4 @@ v0.7.6 is prepared as a prerelease candidate. The public installer remains v0.6.
 
 - Development branch: work/audit-and-improvements.
 - Inno Setup entry point: installer/TuffNodeSetup.iss in the source repository.
-- Public GitHub Release and installer: pending final Windows validation.
+- Public GitHub Release metadata: published.
