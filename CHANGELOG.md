@@ -6,9 +6,9 @@ All notable TuffNode Community releases and engineering milestones are listed he
 
 ---
 
-## v0.7.6 — Release preparation
+## v0.7.6 — 2026-10-03 — Released
 
-The current Community prerelease candidate. The public installer remains v0.6.0 until the v0.7.6 Windows build passes final validation.
+The current Community release. The installer asset will be linked here as soon as the signed Windows build is uploaded.
 
 ### Bugfixes and UI polish
 
