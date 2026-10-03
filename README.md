@@ -4,19 +4,13 @@ Official binary distribution repository for **TuffNode Community**.
 
 ## Current release
 
-**v0.6.0**
+**v0.7.6**
 
-v0.6.0 is the current TuffNode Community release.
-
-## Next release
-
-**v0.7.6 — in release preparation**
-
-The v0.7.6 changelog and release notes are prepared. v0.6.0 remains the current public installer until the v0.7.6 build passes final validation and is attached to GitHub Releases.
+v0.7.6 is the current TuffNode Community release. The signed Windows installer asset will be attached to the GitHub Release when the final binary is uploaded.
 
 See [RELEASE-NOTES-v0.7.6.md](RELEASE-NOTES-v0.7.6.md) and [CHANGELOG.md](CHANGELOG.md).
 
-The v0.7.6 candidate includes responsive server actions, backup presets, add-on modal blur and System scaling fixes. The public installer remains v0.6.0 until final validation.
+The v0.7.6 release includes responsive server actions, backup presets, add-on modal blur and System scaling fixes.
 
 ## Download
 
@@ -26,7 +20,7 @@ https://github.com/dutu-dev/TuffNode-Community/releases
 
 Installer name:
 
-`TuffNode-Community-v0.6.0.exe`
+`TuffNode-Community-v0.7.6.exe`
 
 ## v0.6.0 highlights
 
