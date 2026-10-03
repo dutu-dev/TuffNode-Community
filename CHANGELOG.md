@@ -2,103 +2,94 @@
 
 All notable TuffNode Community releases and engineering milestones are listed here, newest first.
 
-> TuffNode moved directly from the original **v0.1.0 beta** line into the Community rebuild that became **v0.4.0**. No public v0.2.x or v0.3.x release was shipped.
+> v0.7.6 consolidates the Community work delivered since the v0.6.0 public release. Intermediate development milestones are intentionally folded into this release entry.
 
 ---
 
 ## v0.7.6 — 2026-10-03 — Released
 
-The current Community release. The installer asset will be linked here as soon as the signed Windows build is uploaded.
-
-### Bugfixes and UI polish
-
-- Improved high-DPI font rendering with ideal text formatting and layout rounding.
-- Reloaded external server.properties edits into the app without overwriting unsaved changes.
-- Fixed add-on catalog installed-state tracking and improved icon decoding.
-- Clarified installed add-on title/JAR presentation and kept shared themed controls.
-- Replaced placeholder navigation glyphs with consistent Fluent icons.
-- Made server list columns responsive and displayed loopback endpoints as localhost.
-- Removed the local-address column from the main server list so action buttons keep stable space.
-- Standardized server action button dimensions, spacing and hover feedback.
-- Added backup presets with granular include/exclude checkboxes and Custom fallback.
-- Reworked add-on details into a transparent blurred modal.
-- Kept System resource cards accessible under display scaling with aligned metric typography.
-- Added proper System and Appearance navigation icons and subtle shared button animations.
-
-## v0.7.5 — Unreleased
-
-The current Community development line after the documented v0.7.0 milestone. This version is documented for release preparation only; no public release has been published.
-
-### Current polish and release preparation
-
-- Integrated the supplied Community application, installer and tray branding assets.
-- Added cached add-on icons with provider glyph fallback and richer version detail popups.
-- Added Windows shell opening for files from the server file browser while keeping folder navigation inside TuffNode.
-- Fixed Appearance accent propagation across all application resource aliases.
-- Made sidebar version, build number and source revision read generated assembly metadata.
-- Added the matching v0.7.5 installer documentation and release metadata flow.
-
-## v0.7.0 — 2026-09-30 — Unreleased
-
-v0.7.0 is the next Community release focused on lightweight runtime management, networking diagnostics, hardened add-on handling, lifecycle correctness and release integrity.
-
 ### Runtime and JVM
 
-- Added managed Auto, G1GC, ZGC and Shenandoah garbage-collector profiles.
-- Centralized heap, GC and additional JVM argument handling into one launch policy.
-- Moved CPU/RAM telemetry to a low-frequency centralized runtime sampler.
-- Added bounded startup-only Java child discovery for batch-script launches.
+- Added managed Auto, G1GC, ZGC and Shenandoah profiles with one shared launch policy.
 
-### Network diagnostics
+- Added JVM launch preview, structured arguments and editable advanced JVM arguments.
 
-- Added lightweight public TCP reachability checks.
-- Added listener, firewall and NAT/CGNAT-oriented failure explanations.
-- Cached and deduplicated automatic probes per runtime identity.
-- Ignored stale probe completions after runtime restarts, identity changes or effective-port changes.
-- Kept externally changed server ports synchronized back into TuffNode.
+- Centralized CPU/RAM telemetry and bounded Java child-process discovery for script launches.
+
+- Added live PID, CPU, memory and uptime information for the Minecraft process.
+
+### Servers, lifecycle and configuration
+
+- Rebuilt the server catalogue reconciliation to prevent duplicate, ghost and disappearing rows.
+
+- Added safer imported-server handling and synchronization of external server.properties changes.
+
+- Added provider-aware configuration discovery and rollback-consistent visual/raw saves.
+
+- Added coordinated server relocation with managed filesystem ownership and rollback.
+
+- Added single-instance protection and safer shutdown behavior.
+
+### Networking and security
+
+- Added public TCP reachability checks with listener, firewall and NAT/CGNAT explanations.
+
+- Added cached, deduplicated and stale-result-safe network probes.
+
+- Hardened managed paths against junction/symlink escapes.
+
+- Preserved Community product boundaries without importing Core-only remote features.
 
 ### Add-ons
 
-- Hardened Modrinth, Hangar and Spigot downloads with HTTPS-only trusted hosts and redirect validation.
-- Added bounded payload sizes and empty-download rejection.
-- Added strict plugin/mod JAR and datapack ZIP validation.
-- Added root `pack.mcmeta` validation and local datapack ZIP import.
-- Added streaming atomic local imports.
-- Added rollback-safe tracked updates with provider/project/version/SHA-256 metadata.
-- Added concrete Spigot/Spiget version tracking.
-- Preserved restart-required state until the active server stops.
+- Hardened Modrinth, Hangar and Spigot downloads with trusted HTTPS hosts, redirect validation and bounded payloads.
 
-### Lifecycle, configuration and backups
+- Added strict JAR/ZIP validation, local datapack import and atomic installs.
 
-- Protected unsaved configuration when switching or leaving the active server workspace.
-- Serialized workspace/server switching and detached stale Overview observers.
-- Coordinated server relocation with runtime filesystem ownership and rollback.
-- Rejected junction/symlink escapes in editable configuration and managed paths.
-- Made visual/raw configuration saves rollback-consistent.
+- Added rollback-safe tracked updates with provider, project, version and SHA-256 metadata.
+
+- Added a virtualized catalog with improved thumbnails, installed-state tracking and title/JAR metadata.
+
+- Reworked details into a true modal with a transparent blurred backdrop.
+
+- Added compatible version enumeration and exact-version installation.
+
+### Backups and reliability
+
 - Serialized backup create, restore and delete operations.
-- Confined backup operations to their managed roots.
-- Added restore argument validation, disk-capacity checks and rollback-staging cleanup.
-- Disposed UI/runtime observers cleanly during shutdown.
 
-### Desktop and performance
+- Added restore validation, disk-capacity checks and rollback-staging cleanup.
 
-- Added single-instance desktop protection to prevent duplicate application/tray instances.
-- Suspended hidden metrics pages.
-- Avoided expensive UI/player/backup work for telemetry-only runtime state changes.
-- Routed unsaved-configuration warnings through the shared localization catalog.
+- Added backup presets with granular include/exclude checkboxes; manual edits switch the preset to Custom.
 
-### Installer and release integrity
+- Protected unsaved configuration when switching servers or workspaces.
 
-- Centralized Community versioning at v0.7.0.
-- Aligned application and installer publisher identity to **dutu-dev - TuffNode**.
-- Added fail-closed installer release preflight for version, publisher, license and release-facing text.
-- Added published executable metadata verification.
-- Added installer SHA-256 sidecar, `checksums.txt` and a machine-readable release manifest.
-- Kept the existing Community AppId for in-place upgrades.
+- Suspended hidden metrics pages and reduced unnecessary UI churn.
 
-### Product boundary
+### UI and desktop polish
 
-- No Core-only Always-On Service, remote management, player tunneling, remote files, Blackbox, Predictive Failure, Surgical Restore or Player Time Machine functionality is included.
+- Added high-DPI layout rounding, consistent typography and responsive card layouts.
+
+- Removed the local-address column from Servers so action buttons keep stable space without horizontal scrolling.
+
+- Standardized action button dimensions, spacing, alignment and hover feedback.
+
+- Added consistent Fluent icons for System and Appearance.
+
+- Added subtle hover-scale motion to shared buttons and workspace tabs.
+
+- Preserved runtime themes, accent colors, notifications, tray/taskbar states and offline localization.
+
+### Release integrity
+
+- Centralized v0.7.6 versioning across application and installer.
+
+- Added fail-closed installer preflight for version, publisher, license, release notes and executable metadata.
+
+- Added SHA-256 checksums and release-manifest support.
+
+- Preserved the existing Community AppId for in-place upgrades.
+
 
 ---
 
