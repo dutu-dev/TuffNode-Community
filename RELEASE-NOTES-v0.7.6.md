@@ -2,7 +2,7 @@
 
 ## Release status
 
-v0.7.6 is the current Community release. Release metadata is published; the signed Windows installer asset is attached separately when the final binary is uploaded.
+v0.7.6 was the Community release preceding the stable v1.0.0 release. It is retained here as historical release documentation.
 
 ## Highlights since v0.6.0
 
@@ -61,7 +61,7 @@ v0.7.6 is the current Community release. Release metadata is published; the sign
 - Added SHA-256 checksums and release-manifest support.
 - Preserved the existing Community AppId for in-place upgrades.
 
-## Validation
+## Historical validation
 
 - Release branch: work/audit-and-improvements.
 - Inno Setup entry point: installer/TuffNodeSetup.iss.
