@@ -4,13 +4,13 @@ Official binary distribution repository for **TuffNode Community**.
 
 ## Current release
 
-**v0.7.6**
+**v1.0.0**
 
-v0.7.6 is the current TuffNode Community release. The signed Windows installer asset will be attached to the GitHub Release when the final binary is uploaded.
+v1.0.0 is the first stable TuffNode Community release after the 0.7.x development cycle.
 
-See [RELEASE-NOTES-v0.7.6.md](RELEASE-NOTES-v0.7.6.md) and [CHANGELOG.md](CHANGELOG.md).
+See [RELEASE-NOTES-v1.0.0.md](RELEASE-NOTES-v1.0.0.md) and [CHANGELOG.md](CHANGELOG.md).
 
-The v0.7.6 release includes responsive server actions, backup presets, add-on modal blur and System scaling fixes.
+The v1.0.0 release hardens server paths, downloads, archive handling, backups and Shield reconciliation, and adds the GitHub Releases update-check experience.
 
 ## Download
 
@@ -20,7 +20,7 @@ https://github.com/dutu-dev/TuffNode-Community/releases
 
 Installer name:
 
-`TuffNode-Community-v0.7.6.exe`
+`TuffNode-Community-v1.0.0.exe`
 
 ## v0.6.0 highlights
 
@@ -107,9 +107,9 @@ It includes server lifecycle management, Java runtime handling, console and play
 
 See [CHANGELOG.md](CHANGELOG.md).
 
-## v0.6.0 release notes
+## v1.0.0 release notes
 
-See [RELEASE-NOTES-v0.6.0.md](RELEASE-NOTES-v0.6.0.md).
+See [RELEASE-NOTES-v1.0.0.md](RELEASE-NOTES-v1.0.0.md).
 
 ## Source availability
 
