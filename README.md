@@ -8,7 +8,7 @@ Official binary distribution repository for **TuffNode Community**.
 
 v1.0.0 is the first stable TuffNode Community release after the 0.7.x development cycle.
 
-See [RELEASE-NOTES-v1.0.0.md](RELEASE-NOTES-v1.0.0.md) and [CHANGELOG.md](CHANGELOG.md).
+See [CHANGELOG.md](CHANGELOG.md) for the complete v1.0.0 change history.
 
 The v1.0.0 release hardens server paths, downloads, archive handling, backups and Shield reconciliation, and adds the GitHub Releases update-check experience.
 
@@ -21,63 +21,6 @@ https://github.com/dutu-dev/TuffNode-Community/releases
 Installer name:
 
 `TuffNode-Community-v1.0.0.exe`
-
-## v0.6.0 highlights
-
-### Desktop and UI
-
-- Rebuilt dense Community administration shell.
-- Runtime-selectable dark and light themes.
-- Runtime accent-color selection.
-- Notification Center with unread state, history and Silent Mode.
-- Official application, installer and System Tray branding.
-- Windows System Tray integration.
-- Dynamic taskbar and tray status/telemetry.
-- Start with Windows support.
-- Configurable Minimize-to-Tray / Exit behavior.
-- 18 bundled offline languages.
-
-### Server creation
-
-- Reworked Create Server modal with fixed header/footer and scrollable body.
-- Smart Minecraft port selection.
-- Automatic compatible Java / Eclipse Temurin provisioning.
-- Separate minimum and maximum RAM allocation.
-- RAM limits use total installed physical memory rather than current free memory.
-- Optional Geyser / Bedrock support.
-- Managed 64 × 64 server icons.
-- Duplicate-create race protection.
-
-### Server management
-
-- Dense searchable/filterable Servers table.
-- Stable catalogue reconciliation without clearing/rebuilding the full UI list.
-- Fixed first-load duplicate server rows.
-- Fixed server-list flicker and disappearing rows.
-- External `server.properties` changes synchronize back into TuffNode, including port changes.
-- Improved managed/imported server deletion behavior.
-- Locked-file deletion retries for Java/JAR files still in use.
-
-### Workspace
-
-- Modular Overview, Console, Players, Add-ons, Backups, Config and Files views.
-- Provider-aware configuration discovery and raw editing.
-- Live server PID, CPU and memory telemetry.
-- Live player telemetry.
-- Rebuilt Add-ons Catalog / Installed workflows.
-- Optional anticheat detection and Grim recommendation flow.
-- Improved backup and scheduler behavior.
-
-### Reliability
-
-- Application-wide exception boundary for recoverable UI/async failures.
-- Guarded background operations across runtime, tray, Shield, add-ons and loaded views.
-- User-facing error dialogs for recoverable failures.
-- Hardened WPF bindings and nullable image-source handling.
-- Windows/.NET 10 CI validation.
-- **0 warnings**
-- **0 errors**
-- **69 / 69 tests passing**
 
 ## What is published here
 
