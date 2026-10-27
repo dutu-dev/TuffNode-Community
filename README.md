@@ -4,13 +4,13 @@ Official binary distribution repository for **TuffNode Community**.
 
 ## Current release
 
-**v1.0.0**
+**v1.0.1**
 
-v1.0.0 is the first stable TuffNode Community release after the 0.7.x development cycle.
+v1.0.1 is the first patch release after the stable v1.0.0 release.
 
-See [CHANGELOG.md](CHANGELOG.md) for the complete v1.0.0 change history.
+See [CHANGELOG.md](CHANGELOG.md) for the complete v1.0.1 change history.
 
-The v1.0.0 release hardens server paths, downloads, archive handling, backups and Shield reconciliation, and adds the GitHub Releases update-check experience.
+The v1.0.1 release improves the visibility of selected backup-content options across themes.
 
 ## Download
 
@@ -20,7 +20,7 @@ https://github.com/dutu-dev/TuffNode-Community/releases
 
 Installer name:
 
-`TuffNode-Community-v1.0.0.exe`
+`TuffNode-Community-v1.0.1.exe`
 
 ## What is published here
 
@@ -49,10 +49,6 @@ It includes server lifecycle management, Java runtime handling, console and play
 ## Changelog
 
 See [CHANGELOG.md](CHANGELOG.md).
-
-## v1.0.0 release notes
-
-See [RELEASE-NOTES-v1.0.0.md](RELEASE-NOTES-v1.0.0.md).
 
 ## Source availability
 
