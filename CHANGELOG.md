@@ -6,6 +6,18 @@ All notable TuffNode Community releases and engineering milestones are listed he
 
 ---
 
+## v1.0.1 — 2026-10-27 — Patch release
+
+### Fixed
+
+- Improved backup-content checkbox visibility across themes.
+- Added a clear checked-state indicator with stronger contrast, visible borders and hover feedback.
+- Made selected and unselected backup folders easier to distinguish, including BlueMap data.
+
+This patch addresses the visual feedback reported after the v1.0.0 release.
+
+---
+
 ## v1.0.0 — 2026-10-26 — Stable release
 
 TuffNode Community v1.0.0 is the first stable Community release after the 0.7.x development cycle.
