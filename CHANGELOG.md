@@ -1,8 +1,44 @@
 # TuffNode Community Changelog
 
-All notable TuffNode Community releases and engineering milestones are listed here, newest first.
+All notable public TuffNode Community releases are listed here, newest first.
 
-> v0.7.6 consolidates the Community work delivered since the v0.6.0 public release. Intermediate development milestones are intentionally folded into this release entry.
+> The public release history moves from v1.0.1 to v1.4.0. Intermediate development and testing builds were not published as stable releases; their changes are consolidated in v1.4.0.
+
+---
+
+## v1.4.0 — 2026-11-07 — Security and administration update
+
+### Security updates and data integrity
+
+- Added a signed security-patch channel backed by the public TuffNode Community Security Updates repository.
+- Verify signed manifests with the pinned RSA-3072 publisher key before accepting a patch.
+- Verify package SHA-256, asset size, patch sequence, application compatibility and manifest validity.
+- Validate patch archives against their signed operation list; reject undeclared entries, duplicate or case-colliding paths, unsafe destinations, reparse-point traversal and oversized payloads.
+- Added transactional patch application with verified backups, a durable journal, rollback and recovery after an interrupted installation.
+- Security patches are downloaded and staged automatically, but installation always requires explicit user approval.
+- Added a branded in-app maintenance window with real progress reporting; TuffNode closes for file replacement and restarts after the operation.
+- Added DNS rebinding and SSRF protections to trusted download paths.
+
+### Server administration
+
+- Added live Minecraft player inventory inspection.
+- Added inspection of Ender Chests, Bundles and Shulker Boxes, including nested containers.
+- Expanded player details with additional gameplay information.
+- Added console command autocomplete for commands, arguments, online players and selectors.
+- Added an Activity Timeline for server events, warnings, errors and backup operations.
+- Added Diagnostic Bundle generation for support and troubleshooting, with sensitive-data redaction.
+- Improved add-on catalog loading with lazy loading.
+
+### Reliability and interface
+
+- Added SHA-256 integrity verification for backups.
+- Hardened ZIP archive validation, including entry metadata, file sizes and CRC/integrity checks.
+- Improved archive path-traversal protection.
+- Continued UI consistency, alignment, spacing, loading-state and interaction refinements across Community workspaces.
+- Improved localization and application diagnostics.
+- Fixed a player inventory dialog crash caused by a read-only durability binding, and corrected the Backups list to return to the first item after refresh.
+
+See the [full v1.4.0 release notes](RELEASE-NOTES-v1.4.0.md).
 
 ---
 
@@ -12,63 +48,20 @@ All notable TuffNode Community releases and engineering milestones are listed he
 
 - Improved backup-content checkbox visibility across themes.
 - Added a clear checked-state indicator with stronger contrast, visible borders and hover feedback.
-- Made selected and unselected backup folders easier to distinguish, including BlueMap data.
+- Made it easier to distinguish selected and unselected backup folders, including BlueMap data.
 
 This patch addresses the visual feedback reported after the v1.0.0 release.
 
 ---
 
-## v1.0.0 — 2026-10-26 — Stable release
+## v1.0.0 — 2026-10-26 — Release preparation
 
-TuffNode Community v1.0.0 is the first stable Community release after the 0.7.x development cycle.
-
-### Reliability and security
-
-- Hardened managed and imported server path confinement.
-- Added safe handling for filesystem roots, reparse points, unsafe Windows filenames and command-interpreter metacharacters.
-- Added bounded HTTPS-only downloads with redirect validation, size limits and hash metadata validation.
-- Hardened managed Java and add-on downloads and archive extraction.
-- Added archive traversal, symlink, entry-count and expanded-size protection.
-- Serialized server mutations, add-on operations, backups, restore, move and delete operations.
-- Improved Shield ownership tracking and reconciliation so TuffNode does not remove operator- or plugin-owned bans.
-- Added bounded application log rotation and secret redaction for credentials, tokens, connection strings and private-key blocks.
-- Installer launch uses the original user token instead of Setup elevation.
-
-### Server management
-
-- Improved server metadata normalization and catalog recovery.
-- Added safer create, import, update, move and delete flows.
-- Added runtime maintenance coordination during JAR replacement and server updates.
-- Disabled Start and Restart while an update transaction is active.
-- Preserved pre-update backups for explicit recovery.
-
-### Add-ons and backups
-
-- Added provider checksum and declared-size verification where available.
-- Added cancellation-safe archive validation and background processing.
-- Improved atomic replacement and rollback behavior.
-- Added bounded backup restore limits and reparse-point checks.
-- Preserved user files outside the managed add-on target.
-
-### Desktop and update experience
-
-- Removed unused legacy UI artifacts.
-- Added GitHub Releases update checks against the public `dutu-dev/TuffNode-Community` repository.
-- Automatic update checks run at most once every seven days.
-- Added manual **Check for updates** and **View release notes** actions.
-- Updates are not downloaded or installed automatically.
-- Preserved Community themes, localization, runtime controls, networking diagnostics, Shield and tray behavior.
-
-### Release bundle
-
-- `TuffNode-Community-v1.0.0.exe`
-- `TuffNode-Community-v1.0.0.exe.sha256`
-- `checksums.txt`
-- `TuffNode-Community-v1.0.0.release.json`
-
-The installer preserves the existing Community AppId for in-place upgrades from 0.7.6.
-
----
+- Hardened server path confinement, downloads, archive extraction and filesystem operations.
+- Added serialized mutation handling for servers, add-ons, backups, restore, move and delete.
+- Improved Shield ban ownership and reconciliation safety.
+- Added bounded log rotation and secret redaction.
+- Added GitHub Releases update checks with weekly automatic checks and manual release-notes access.
+- Removed unused legacy UI artifacts and preserved the Community-only product scope.
 
 ## v0.7.6 — 2026-10-03 — Released
 
