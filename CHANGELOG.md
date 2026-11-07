@@ -36,6 +36,7 @@ All notable public TuffNode Community releases are listed here, newest first.
 - Improved archive path-traversal protection.
 - Continued UI consistency, alignment, spacing, loading-state and interaction refinements across Community workspaces.
 - Improved localization and application diagnostics.
+- Fixed a player inventory dialog crash caused by a read-only durability binding, and corrected the Backups list to return to the first item after refresh.
 
 See the [full v1.4.0 release notes](RELEASE-NOTES-v1.4.0.md).
 

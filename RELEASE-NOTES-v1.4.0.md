@@ -50,6 +50,7 @@ TuffNode Community v1.4.0 consolidates the work delivered since the last public 
 - Improved archive path-traversal protections.
 - Continued interface consistency and usability refinements across Community workspaces, including alignment, spacing, loading states and interaction feedback.
 - Improved diagnostics and localization.
+- Fixed a player inventory dialog crash caused by a read-only durability binding, and corrected the Backups list to return to the first item after refresh.
 
 ## Installation and compatibility
 
