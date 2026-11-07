@@ -4,13 +4,11 @@ Official binary distribution repository for **TuffNode Community**.
 
 ## Current release
 
-**v1.0.1**
+**v1.4.0**
 
-v1.0.1 is the first patch release after the stable v1.0.0 release.
+v1.4.0 is the latest stable Community release and consolidates the development work delivered since public release v1.0.1.
 
-See [CHANGELOG.md](CHANGELOG.md) for the complete v1.0.1 change history.
-
-The v1.0.1 release improves the visibility of selected backup-content options across themes.
+See [RELEASE-NOTES-v1.4.0.md](RELEASE-NOTES-v1.4.0.md) for the full release notes and [CHANGELOG.md](CHANGELOG.md) for the release history.
 
 ## Download
 
@@ -20,7 +18,7 @@ https://github.com/dutu-dev/TuffNode-Community/releases
 
 Installer name:
 
-`TuffNode-Community-v1.0.1.exe`
+`TuffNode-Community-v1.4.0.exe`
 
 ## What is published here
 
@@ -39,7 +37,9 @@ This repository is intentionally distribution-only.
 
 TuffNode Community is a free Windows application for creating, importing and managing self-hosted Minecraft servers.
 
-It includes server lifecycle management, Java runtime handling, console and player tools, add-on browsing and installation, installed add-on management, backups, networking tools, Shield controls, configurable JVM memory/arguments and optional Java/Bedrock cross-play through Geyser.
+It includes server lifecycle management, Java runtime handling, live player inventory inspection, console autocomplete, Activity Timeline, Diagnostic Bundles, add-on browsing and installation, backups, networking tools, Security controls and signed, user-approved security updates.
+
+Security updates are published separately through the TuffNode Community Security Updates repository. Patch packages are signature- and hash-verified, and applying a patch requires explicit user approval.
 
 ## Platform
 
