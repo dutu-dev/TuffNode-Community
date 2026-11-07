@@ -20,6 +20,8 @@ Installer name:
 
 `TuffNode-Community-v1.4.0.exe`
 
+**Signing notice:** The v1.4.0 installer is not Authenticode-signed. Windows SmartScreen may show an unknown publisher warning. Verify the SHA-256 sidecar from the release before running the installer.
+
 ## What is published here
 
 This repository is intentionally distribution-only.

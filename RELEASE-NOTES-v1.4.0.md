@@ -59,6 +59,10 @@ TuffNode Community v1.4.0 consolidates the work delivered since the last public 
 - Security patches are downloaded and verified separately from the main application installer. Applying a security patch requires explicit user approval.
 - The Windows installer is distributed as a standalone executable through the official GitHub Releases page.
 
+## Installer signing
+
+The v1.4.0 installer is not Authenticode-signed. Windows SmartScreen may show an unknown publisher warning. Verify the SHA-256 sidecar published with the installer before running it.
+
 ## Release bundle
 
 - `TuffNode-Community-v1.4.0.exe` — Windows installer.
