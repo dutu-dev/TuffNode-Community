@@ -6,162 +6,277 @@ Public release history is listed here. The v1.5.0 release preparation branch con
 
 ---
 
-## v1.5.0 — Cumulative update since public v1.0.1
+## v1.5.0 — Next public release (cumulative since v1.0.1)
 
-**Comparison baseline:** TuffNode Community **v1.0.1**, published **27 October 2026**.  
-**Scope:** the complete cumulative change set to v1.5.0; intermediary 1.0.2–1.4.x builds were **internal development milestones, not public stable releases**.  
-**Source review:** 1,600 development commits and 228 changed files relative to the development commit preparing v1.0.1, plus public-distribution metadata reviewed against the released v1.0.1.
+**Release:** TuffNode Community v1.5.0  
+**Previous public stable release:** v1.0.1 — 27 October 2026  
+**Scope:** all changes since v1.0.1. Versions 1.0.2–1.4.x were internal development/testing builds, not public stable releases.  
+**Product:** Local-first Windows x64 Minecraft server management.
 
-### Server library, navigation and lifecycle
+TuffNode Community v1.5.0 consolidates the development work after v1.0.1 into a single public update: player inventories and Chat, TPS monitoring, better console/add-on/backup management, expanded protection and security updates, 18-language localization, refreshed desktop UX, and installer/privacy improvements.
 
-- Refined Home/Recent Servers with more consistent server rows, status information, action placement and recent-activity ordering.
-- Refined the Servers table, search, server-creation date sorting, labels, controls and responsive row actions.
-- Improved server lifecycle status presentation across starting, loading, online, stopping, failed and stopped states.
-- Improved startup/failure reporting and operational notifications; ordinary lag is not treated as a server-crash alert.
-- Improved handling of Java process discovery and orphaned processes; strengthened normal shutdown lifecycle.
-- Refined server workspace navigation, tab toolbars, status counters, notification interactions and unsaved-configuration protections.
-- Improved creation/import dialog sizing, scrollbar behavior, JVM preset alignment and layout on smaller windows.
-- Added direct access to the official Minecraft EULA from the server-creation agreement control; opening the terms does not automatically accept them.
-- Refined server settings, including managed Java/runtime settings and save interactions for server properties.
-- Improved configuration-editing presentation, including line alignment, bounded content and consistent themed dialogs.
+### 1. Server Management
 
-### Runtime monitoring and Network
+- Refined the Home dashboard and Recent Servers presentation.
+- Improved server ordering based on recent activity.
+- Improved the Servers table with creation-date sorting, filtering and search.
+- Refined server status indicators for starting, loading, online, stopping, stopped and failed states.
+- Improved Start, Stop and Restart controls and their visual feedback.
+- Improved Java process detection and server shutdown handling.
+- Refined server creation and import dialogs.
+- Improved server configuration editing and save operations.
+- Improved workspace navigation and handling of unsaved settings.
+- Improved support for managed and imported server configurations.
+- Added direct access to the official Minecraft EULA during server creation; opening the terms does not accept them.
+- Standardized server management action buttons, spacing and alignment.
+- Improved server startup and failure notifications without treating routine tick lag as a crash.
+- Improved responsiveness of modal forms and server configuration editors.
 
-- Added **TPS monitoring** to supported server dashboards, including server overview, Home, Servers and Network status displays.
-- TPS is sampled at an approximately **10-second** cadence using a captured `tps` console command; samples are shared across views to avoid duplicate polling.
-- TPS shows `—` when the server is stopped, the command is unsupported or valid command output is unavailable; the value is **not inferred from CPU usage**.
-- Reorganized displayed server metrics and removed redundant PID presentations while keeping live process CPU, RAM, PID and uptime where relevant.
-- Improved CPU/RAM/TPS row alignment using separate label/value columns, tabular numerals and uniform spacing.
-- Refined per-server Network cards, including local/public address presentation, copy icons, descriptions and status/tooltips.
-- Adjusted the **Refresh Addresses** button in the **server's Network tab** and separated its loading indicator to avoid overlap.
-- Refined the global Network page with clearer server-status, local/public address and action columns, aligned counters and progress feedback.
-- Strengthened manual public-IP/port diagnostic handling and timeout/retry response safety.
-- Removed experimental persistent inbound/outbound network traffic monitoring and its background collectors; this is **not a v1.5.0 feature**.
+### 2. Monitoring and Performance
 
-### Player details, inventories and gameplay information
+- Added live TPS monitoring for compatible Minecraft server implementations.
+- Implemented shared TPS sampling using the server's `tps` command.
+- Configured sampling approximately every 10 seconds.
+- Shared TPS results between supported dashboard views to avoid redundant polling.
+- Added TPS information to Home, Servers, Network and server overview.
+- Added explicit unavailable states for unsupported or offline servers; TPS is never inferred from CPU usage.
+- Improved CPU, RAM, PID and uptime presentation.
+- Removed redundant PID information from selected dashboards.
+- Standardized resource value typography and numeric alignment.
+- Aligned CPU, RAM and TPS labels and values using consistent grid columns.
+- Improved server process discovery and monitoring reliability.
+- Refined global and per-server Network status cards, public/local IP address presentation, copy icons and tooltips.
+- Moved Refresh Addresses slightly higher in Server → Network, placing the loading indicator in its own row to avoid overlap.
+- Improved public-IP and port diagnostic response validation.
+- Removed experimental inbound/outbound network traffic monitoring and its background collectors; this feature does not ship in v1.5.0.
 
-- Added richer per-player details, including available gameplay/inventory information and snapshot timestamps.
-- Added **live Minecraft player inventory inspection** using captured server command output when supported; retained an explicit saved-playerdata fallback when live inspection is unavailable.
-- Added saved Ender Chest inspection and recursive support for **Bundles** and **Shulker Boxes**, including nested containers and slot ordering.
-- Improved support for non-stackable items, empty containers, item quantities, item durability descriptions and hover details.
-- Added locally cached official Minecraft item visual assets, with bounded decoding, download size checks and better offline behavior.
-- Hardened NBT/SNBT parsing, decompression and nested inventory limits to avoid oversized or malformed payloads.
-- Improved the player-detail modal: metadata/Refresh alignment, available scroll width, compact controls and visual consistency.
-- Refined player search, filters, action sizing, table headers, counts and empty-state explanations.
-- Removed the external MCHeads/player-head image integration and associated remote image requests; the interface no longer depends on that image service.
+### 3. Player Management
 
-### Dedicated Chat tab and Console
+- Added expanded player detail inspection.
+- Added live player inventory inspection where supported, using captured server responses.
+- Added saved-playerdata fallback for unavailable live data.
+- Added Ender Chest inspection.
+- Added Bundle content inspection.
+- Added Shulker Box inspection.
+- Added support for nested inventory containers.
+- Improved item slot ordering and inventory layouts.
+- Improved handling of non-stackable items and empty containers.
+- Expanded item tooltips and available item metadata, including durability information where available.
+- Added locally cached Minecraft item assets with improved offline handling.
+- Improved inventory loading and error feedback.
+- Improved player searches, filters and management controls.
+- Refined player detail timestamps, refresh controls, scrollbars and modal presentation.
+- Hardened NBT/SNBT data parsing, decompression limits and nested inventory limits.
+- Removed the external MCHeads player-image integration and associated third-party image requests.
 
-- Introduced a dedicated **Chat** workspace, separate from raw server-console and operational logging.
-- Displays recognized standard Minecraft player chat in conversation bubbles, with avatar initials, author, time and message content.
-- Shows TuffNode-sent server messages separately, with right-aligned outgoing bubbles.
-- Added a fixed composer with **Enter** and Send actions using Minecraft's `say` command.
-- Preserves recent messages and unsent drafts **per server in memory** across tab/server navigation; includes Clear and bounded history.
-- Does not persist a permanent chat archive; third-party chat plugin formats may require additional parsing.
-- Improved console command autocompletion with command arguments, valid selectors, available online players, known/offline targets where appropriate and block/item context.
-- Improved console suggestion navigation and accepted-value insertion, keyboard handling and command history.
-- Improved console text wrapping, input controls and layout stability.
+### 4. New Chat Workspace
 
-### Add-ons and installed content
+- Introduced a dedicated Chat tab.
+- Separated recognized Minecraft player chat from diagnostic console messages.
+- Added conversation-style message bubbles.
+- Added player names, avatar initials and timestamps.
+- Added visually distinct outgoing server messages.
+- Added message composition through the Minecraft `say` command.
+- Added Enter-to-send functionality.
+- Added automatic scrolling for incoming messages.
+- Added per-server conversation history during the current application session.
+- Preserved unsent drafts across tab and server navigation.
+- Added a Clear action and bounded message retention.
+- Renamed In-game Chat to Chat consistently across the workspace and all supported locales.
+- Chat uses recognized Minecraft console message formats; third-party plugin formats may require additional parser support.
+- Chat history is not a persistent messaging archive and is not guaranteed to survive application restart.
 
-- Refined catalog discovery and loading, including lazy loading, virtualization and incremental result presentation.
-- Improved add-on catalog icon loading, caching/downscaling, supported image decoding and bounded cache memory.
-- Refined installed add-on information, display-name metadata, installed-state tracking and version status display.
-- Redesigned catalog and installed add-on details dialogs, including layout, actions, location labels, progress feedback and visual hierarchy.
-- Improved add-on download/install busy indicators, button states, toolbar height and horizontal overflow behavior.
-- Improved search text/placeholder alignment, bottom-toolbar clearance, installed-list header alignment and scroll behavior.
-- Strengthened archive validation, destination confinement, duplicate-file/colliding-path handling and recovery after failed content updates.
-- Refined anti-cheat suggestion dismissal persistence and compatible add-on administration flows.
+### 5. Console Improvements
 
-### Backup, restore, files and configuration
+- Improved console command autocomplete.
+- Added context-aware command argument suggestions.
+- Improved online player and known-player suggestions.
+- Improved Minecraft selector completion.
+- Improved command input keyboard navigation.
+- Improved Tab completion and suggestion selection.
+- Refined console command history and input feedback.
+- Improved text wrapping and command presentation.
+- Refined console control spacing and loading states.
+- Improved safe handling of command response capture used by live player information and TPS sampling.
 
-- Strengthened backup archive verification, including **SHA-256 integrity handling**, ZIP structural/integrity checks and CRC32 checks against decompressed content.
-- Added stronger path traversal, invalid entry name, reparse-point/junction, archive expansion and filesystem containment safeguards.
-- Improved backup and add-on operation sequencing and per-server mutation coordination.
-- Added protection for backed-up server configuration secrets, including RCON password redaction unless deliberately included.
-- Improved backup list refresh, scroll retention, focus control, loading and restore feedback.
-- Refined backup dialogs, confirmation overlays, responsive toolbar controls and empty states.
-- Improved File Manager navigation, download states, selection and action-button alignment.
-- Maintained **standard portable ZIP backups**. Experimental application encryption / EFS / recovery-password backup variants introduced during development were **removed**; users must secure exported backup files themselves.
+### 6. Add-ons Management
 
-### Security: protection and updates
+- Improved catalog browsing and incremental loading.
+- Refined lazy loading and result virtualization.
+- Improved add-on search and filtering controls.
+- Improved icon downloading, caching, size limits and rendering.
+- Added more resilient local icon handling.
+- Improved installed add-on metadata and display names.
+- Redesigned add-on detail dialogs.
+- Redesigned installed add-on details and action placement.
+- Improved installation and download progress indicators.
+- Improved installed-state visibility and version status.
+- Refined download, installation and update feedback.
+- Improved alignment of search bars, toolbars, headers and list rows.
+- Strengthened archive validation and installation rollback behavior.
+- Improved prevention of unsafe paths, case-colliding and duplicate archive entries.
+- Refined anti-cheat suggestion and dismissal behavior.
 
-- Expanded the optional Shield protection configuration with clearer **three-layer** defense status, settings and explanations.
-- Added/synchronized an optional server-side TuffNode Shield Bukkit plugin and its managed local installation workflow for compatible servers.
-- Added handling for temporary blocks, trusted/blocked addresses, login-abuse detection and Windows Firewall TCP/UDP endpoint policies.
-- Improved Shield policy reconciliation, ownership-aware Minecraft bans and avoidance of interfering with operator-managed bans.
-- Added durable local Shield security audit events and rate-limit/persistence safeguards.
-- Improved notices for degraded/restored enforcement and missing/returning server-side plugin components.
-- Renamed the primary user-facing **Shield** navigation area to **Security** while retaining underlying Shield protection capabilities.
-- Introduced a signed security-patch update channel, backed by the public security updates repository, with pinned publisher verification, compatible manifest/payload checks and staged downloads.
-- Added **explicit approval before applying security patches**; patch discovery/download may run automatically, but installation is not silently forced.
-- Added a separate patch runner, in-app/maintenance-window progress, transaction journal, verified backups, rollback and recovery after interruption.
-- Tightened accepted signed patch identifiers, versions, asset names, declared file operations, archive size and safe extraction targets.
+### 7. Backups, Restore and File Management
 
-### Network, download and parsing hardening
+- Added stronger backup integrity verification, including SHA-256 mechanisms.
+- Improved ZIP archive structural validation.
+- Strengthened CRC32 verification and decompressed-data checks.
+- Improved archive traversal protection.
+- Added additional safeguards against unsafe filesystem destinations, Windows-reserved paths and junction/reparse-point escapes.
+- Improved backup creation, restore and add-on operation coordination.
+- Improved handling of malformed or oversized backup archives.
+- Added protection for sensitive server configuration values in sanitized backup snapshots; RCON passwords are redacted unless explicitly included.
+- Improved backup refresh and scrolling behavior.
+- Improved backup loading indicators and error messages.
+- Refined backup configuration controls and confirmation dialogs.
+- Improved File Manager navigation, actions and loading feedback.
+- Improved configuration editor limits and presentation.
+- Community continues to use standard portable ZIP backups: experimental mandatory application encryption, Windows EFS and recovery-password approaches were removed during development.
+- Exported backup archives remain the server operator's responsibility to protect.
 
-- Enforced secure HTTPS-oriented external provider communication and explicit validation of allowed hosts, redirects, ports, public IP targets and DNS results.
-- Strengthened protections against SSRF, private/loopback/reserved IP routing, DNS rebinding and HTTPS-to-HTTP downgrade.
-- Added bounded HTTP response readers for external provider metadata, catalogs, Minecraft version information and network diagnostics.
-- Hardened server software, Java runtime, add-on and security-patch download handling with size/hash checks where provided.
-- Strengthened ZIP/JAR path and metadata parsing, Windows reserved names, collision checks and expanded-size enforcement.
-- Added more comprehensive secret redaction for diagnostic/application logs, webhook and signed-URL credentials.
-- Centralized Minecraft player-name validation before generating privileged administration commands.
-- Updated security-sensitive dependencies and added/expanded automated regression tests, NuGet vulnerability auditing and CodeQL/OSV scanning configuration.
-- Security controls reduce known risks; **they do not constitute a guarantee of zero vulnerabilities**.
+### 8. Security and Protection
 
-### Notifications and operational reliability
+- Introduced a dedicated Security Updates interface, replacing the user-facing Shield navigation name with Security while retaining Shield controls.
+- Added a signed security-patch distribution workflow.
+- Added patch manifest verification against the pinned publisher key.
+- Added package checksum, size, sequence and compatibility validation.
+- Added staged patch downloads.
+- Required explicit user approval before applying a security patch; patch discovery/download may be automatic.
+- Introduced a separate patch installation helper.
+- Added maintenance progress reporting.
+- Added transactional patch application and rollback mechanisms.
+- Added recovery handling for interrupted installations.
+- Improved patch archive and destination validation.
+- Expanded the presentation and configuration of the three Shield protection layers.
+- Improved server-side Shield plugin integration for compatible servers.
+- Improved trusted and blocked IP management.
+- Added temporary blocking and login-abuse protection controls.
+- Improved Windows Firewall rule synchronization, including TCP/UDP endpoints where relevant.
+- Strengthened ownership-aware Minecraft ban management.
+- Added persistent local Shield security audit information.
+- Improved notifications for protection failures and recovery.
+- Strengthened HTTPS download policies.
+- Added additional redirect, hostname, port, DNS and public-target-address validation.
+- Improved protections against SSRF, DNS rebinding and HTTPS-to-HTTP downgrade.
+- Restricted unsafe private, reserved and loopback network destinations.
+- Added bounded handling for external HTTP response content.
+- Improved archive extraction limits and unsafe-path detection.
+- Improved sensitive-data redaction in diagnostic and application logs.
+- Hardened Minecraft player-name validation before administrative commands.
+- Expanded security regression tests and dependency vulnerability checks.
+- These measures reduce known risks but do not guarantee zero vulnerabilities.
 
-- Added notifications for server faults, failed scheduled backups and available server software updates.
-- Added warnings when free space on the volume containing a managed Minecraft server becomes low.
-- Improved deduplication of repeated operational alerts and severity/status text.
-- Refined notification flyout behavior, unread badge alignment, outside-click dismissal, Silent Mode interactions and detailed notification overlays.
-- Replaced more native Windows message boxes with themed TuffNode dialogs, including consistent confirmations and full-window dimming.
-- Refined system tray context menus and exit confirmations to follow the app's visual theme.
-- Added more consistent busy/progress states and cancellation handling for long-running operations.
+### 9. Network Improvements
 
-### Design, themes, UX and Windows integration
+- Redesigned network status and address presentation.
+- Improved local and public connection address visibility.
+- Standardized copy-address buttons.
+- Added contextual network explanations and tooltips.
+- Improved diagnostic loading indicators.
+- Improved public-IP and port-check response handling.
+- Improved alignment of managed server counters and connection information.
+- Refined Server → Network, including Refresh Addresses positioning and a dedicated loading-bar row.
+- Removed the experimental background network traffic monitor.
+- Hardened external provider HTTPS, redirect and public-IP connection handling.
 
-- Added **Catppuccin Mocha, Tokyo Night, Nord Arctic, Dracula and Rosé Pine Dawn** appearance themes.
-- Stabilized dynamic theme brushes, background/surface colors, overlay/backdrop opacity and theme-change rollback behavior.
-- **Gruvbox was trialed and then removed**; it is not listed as a shipped theme.
-- Refined titlebar, window chrome, rounded normal-window corners, maximized work area, keyboard focus feedback, resizable layouts and system tray styling.
-- Standardized margins, page headers, shared section spacing, form controls, button dimensions, icon sizes and hover/press animations.
-- Improved Home, Servers, Java, Network, Settings, Security, Players, Backups, Add-ons, Logs and Files alignments.
-- Fixed clipping/overflow in searches, dropdowns, toolbar buttons, scrollbars, bottom content edges and dense cards.
-- Standardized server overview metric typography and technical-text presentation; improved truncation, word wrapping and table-header/value baselines.
-- Adjusted close-button color/hover contrast while preserving destructive-action styling.
-- Refined loading bars to follow rounded UI surfaces and avoid overlapping adjacent actions.
-- Improved keyboard-only focus cues rather than showing focus highlights on every mouse interaction.
+### 10. Notifications and Reliability
 
-### Localization and accessibility
+- Added improved alerts for unexpected server failures.
+- Added scheduled-backup failure notifications.
+- Added notifications for available server software updates.
+- Added warnings for low available disk space on server volumes.
+- Improved notification deduplication.
+- Refined notification flyout behavior.
+- Improved unread notification badge positioning.
+- Added themed notification detail overlays.
+- Improved outside-click dismissal and Silent Mode interactions.
+- Refined system tray menus and exit confirmations.
+- Replaced additional native Windows dialogs with themed application dialogs.
+- Improved loading states for asynchronous operations.
+- Improved operational error reporting and handling of unavailable resources.
 
-- Updated all **18 bundled offline languages**: English, Romanian, German, Spanish, French, Italian, Brazilian Portuguese, Dutch, Polish, Czech, Hungarian, Swedish, Turkish, Russian, Ukrainian, Japanese, Korean and Simplified Chinese.
-- Current locale files each contain **1,079 keys**, with zero missing keys relative to English in a structural JSON/key audit.
-- Added translation coverage for new Security/Chat interfaces, server creation, players, backups, add-ons, network, diagnostics, system settings, errors and notifications.
-- Improved localized confirmation dialogs, accessible labels, error explanations and placeholder/entered-text alignment.
-- Added localization audit tooling and workflow definitions. Structural key parity does not guarantee that every translation is idiomatic.
+### 11. Appearance and UI/UX
 
-### Privacy, installation and distribution
+- Added Catppuccin Mocha, Tokyo Night, Nord Arctic, Dracula and Rosé Pine Dawn themes.
+- Refined window chrome and rounded corners.
+- Improved maximized-window boundaries and taskbar integration.
+- Standardized page margins and content spacing.
+- Standardized buttons, toggles, icons and interactive states.
+- Improved mouse hover and button press animations.
+- Improved keyboard-only focus indicators.
+- Refined modal overlays and theme-dependent backdrop behavior.
+- Improved loading bar shapes and positioning.
+- Corrected clipping in toolbars, search controls and window edges.
+- Improved text field and placeholder alignment.
+- Refined typography across dashboards and management pages.
+- Improved Home, Servers, Network, Players, Add-ons, Files, Logs and Settings layouts.
+- Standardized table-header and data-column alignment.
+- Refined close-button hover contrast and destructive-action styling.
+- Improved visual behavior when changing themes.
+- Corrected several theme brush and overlay rendering issues.
+- Standardized Home/Servers header actions and CPU/RAM/TPS resource columns.
+- Gruvbox was evaluated during development but removed from the final theme selection.
 
-- Added clearer locally controlled data-management actions, application log cleanup and player-history clearing/retention choices.
-- Added controls limiting selected third-party requests and consolidated privacy information around the canonical [Privacy & Responsible Use Notice](https://tuffnode.com/privacy).
-- Removed outdated player-image cache disclosures following the removal of remote player-image retrieval.
-- Updated installer EULA flow and separate Privacy & Responsible Use acknowledgement.
-- Updated `installer/build-installer.ps1` for version-aligned .NET 10 publish, Inno Setup packaging, optional Authenticode signing, SHA-256 checksum and release manifest generation.
-- Preserved the Community AppId for intended in-place upgrades from v1.0.1; retained the current user's launch token after elevated installation.
-- Added a v1.5.0 release checklist and separate draft for GitHub release notes/community announcement.
+### 12. Localization
 
-### Compatibility and important limits
+- Updated localization resources for English, Romanian, German, Spanish, French, Italian, Brazilian Portuguese, Dutch, Polish, Czech, Hungarian, Swedish, Turkish, Russian, Ukrainian, Japanese, Korean and Simplified Chinese.
+- Updated translations for Chat and Security.
+- Expanded translations throughout server management.
+- Updated player, inventory and backup interfaces.
+- Updated Add-ons and Network terminology.
+- Expanded settings, errors and notification translations.
+- Improved translated confirmations and interface labels.
+- Added localization consistency tools.
+- Aligned translation resource structures across all supported languages.
+- All 18 locale files contain the same 1,079 resource keys as English; structural coverage was checked, but language quality requires separate review.
 
-- Windows x64: support requirements are documented in the project README/installer; Windows 10 Home/Pro compatibility must not be overstated for the .NET 10 target.
-- Compatible Minecraft server software is needed for live inventory and TPS; certain data may only be available from a saved playerdata snapshot.
-- No Direct Connect, hosted relay, Core-only premium service or Minecraft-server traffic analytics is included with Community.
-- Chat history is session-scoped, not a synchronized or persistent messaging service.
-- Backup archives remain portable ZIP files; there is no built-in end-to-end backup encryption promise.
+### 13. Privacy and Local Data Controls
 
-For the expanded website-ready presentation, see [v1.5.0 release notes](RELEASE-NOTES-v1.5.0.md). Installer and checksum assets are added when the final validated v1.5.0 package is published.
+- Added clearer player-history retention settings.
+- Improved local player-history cleanup.
+- Added application log cleanup controls.
+- Improved handling of selected third-party network requests.
+- Consolidated privacy information around the public Privacy & Responsible Use Notice at https://tuffnode.com/privacy.
+- Updated installer acknowledgement requirements.
+- Removed the external MCHeads player-image integration and associated requests.
+- Updated documentation to reflect the application's actual data-handling behavior.
+- Displayed the complete Privacy & Responsible Use Notice during installation, with its last updated date and explicit acknowledgement.
 
+### 14. Installer and Release Engineering
+
+- Updated application versioning to v1.5.0.
+- Aligned application, PatchRunner, installer and release metadata.
+- Prepared the .NET 10 Windows x64 publishing workflow.
+- Added explicit PatchRunner publishing to the expected packaged output directory.
+- Preserved the existing Community installation identity for in-place upgrades.
+- Updated the installer license and privacy acknowledgement flow.
+- Updated installer descriptions and release documentation.
+- Included the complete cumulative release changelog and versioned release notes in the installer.
+- Prepared optional Authenticode signing.
+- Added SHA-256 checksum generation and verification.
+- Added a structured release manifest.
+- Improved installer preflight validation, including the canonical changelog and privacy notice.
+- Expanded the release checklist and public GitHub release documentation.
+- GitHub Actions is optional for this release; the release is validated locally by its maintainer.
+
+### 15. Important Compatibility Notes
+
+- TuffNode Community remains a local desktop Minecraft server management application.
+- Direct Connect and Core-only remote features are not included.
+- TPS depends on compatible Minecraft server output.
+- Live inventory information depends on server capabilities and available player data.
+- Chat relies on supported Minecraft log formats.
+- Chat message history is session-scoped, not a synchronized or persistent messaging service.
+- Backup archives remain portable ZIP files; no built-in end-to-end backup encryption is promised.
+- External Minecraft software, plugins, mods and services remain subject to their own licenses and terms.
+- Supported Windows x64 versions must follow the .NET 10 and installer compatibility requirements.
+
+### Release Summary
+
+TuffNode Community v1.5.0 combines the improvements developed after v1.0.1 into one substantial public update. The objective is to make Community more capable, consistent, reliable and secure while preserving its local-first approach to Minecraft server management.
+
+For complementary details, see [v1.5.0 release notes](RELEASE-NOTES-v1.5.0.md). The 15 sections above are the authoritative cumulative v1.5.0 change list; the website and installer must use this same list.
 
 ---
 
