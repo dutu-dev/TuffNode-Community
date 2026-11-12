@@ -2,15 +2,14 @@
 
 Official binary distribution repository for **TuffNode Community**.
 
-## Current release
+## Next public release: v1.5.0
 
-**v1.0.1**
+This **release-preparation branch** contains the documentation for v1.5.0, the cumulative update after the last public stable **v1.0.1 (27 October 2026)**. Internal 1.0.2–1.4.x development builds were not distributed as public stable releases.
 
-v1.0.1 is the first patch release after the stable v1.0.0 release.
+- [Full v1.5.0 release notes](RELEASE-NOTES-v1.5.0.md)
+- [Complete cumulative v1.5.0 changelog](CHANGELOG.md)
 
-See [CHANGELOG.md](CHANGELOG.md) for the complete v1.0.1 change history.
-
-The v1.0.1 release improves the visibility of selected backup-content options across themes.
+**The public `main` branch and the downloadable installer remain on v1.0.1 until the v1.5.0 release is actually published.** Only advertise a new installer after uploading the verified binary and SHA-256 assets.
 
 ## Download
 
@@ -20,7 +19,9 @@ https://github.com/dutu-dev/TuffNode-Community/releases
 
 Installer name:
 
-`TuffNode-Community-v1.0.1.exe`
+Current public installer: `TuffNode-Community-v1.0.1.exe`
+
+Planned v1.5.0 installer (not yet uploaded): `TuffNode-Community-v1.5.0.exe`
 
 ## What is published here
 
