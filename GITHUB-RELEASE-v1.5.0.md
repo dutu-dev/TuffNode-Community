@@ -1,11 +1,4 @@
-# GitHub Release — TuffNode Community v1.5.0
-
-**Tag:** `v1.5.0`  
-**Release title:** `TuffNode Community v1.5.0`  
-**Release type:** Stable (not a prerelease)  
-**Baseline:** Last public release `v1.0.1` (October 27, 2026)
-
-> **Maintainer note (remove from the GitHub release body):** This file is the prepared GitHub release text. Upload the installer and its actual generated checksum/manifest assets before publishing. Do not invent checksum values or mark a release published before the downloadable installer exists.
+# TuffNode Community v1.5.0
 
 ## What's new since v1.0.1
 
@@ -68,13 +61,3 @@ Attach the following files produced by the final local Windows build:
 
 Verify the installer SHA-256 against the attached checksum file. The checksum must match the **final installer bytes**, including any Authenticode signature.
 
-## Before pressing Publish release (maintainer checklist, remove from final body)
-
-- [ ] Merge the release-preparation PR into `dutu-dev/TuffNode-Community/main`.
-- [ ] Generate the installer locally from the correct frozen Community source commit.
-- [ ] Confirm installer filename/version and that an upgrade from v1.0.1 works.
-- [ ] Upload the installer plus the generated checksum and manifest files.
-- [ ] Verify the actual SHA-256 after upload.
-- [ ] Set tag `v1.5.0` and title `TuffNode Community v1.5.0`.
-- [ ] Select stable release, not prerelease.
-- [ ] Publish; after publication, synchronize the website download metadata while preserving the changelog entry.
